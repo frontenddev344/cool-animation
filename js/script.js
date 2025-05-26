@@ -156,8 +156,8 @@ let section6Timeline = gsap.timeline({
     scrollTrigger: {
         trigger: "#section6",
         start: "top top",
-        end: "bottom 50%",
-        scrub: 4,
+        end: "bottom 40%",
+        scrub: 2,
         pin: true,
         anticipatePin: 1,
         // markers: true
