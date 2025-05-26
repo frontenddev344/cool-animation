@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cool img gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+        <!-- site-header start -->
+        <header class="site-header">
+            <div class="container">
+              <div class="site-logo">
+                <a href="#"><img src="images/site-logo.png" alt="site-logo"></a>
+              </div>
+              <nav class="site-nav">
+                <ul>
+                  <li><a href="#">home</a></li>
+                  <li><a href="#">about</a></li>
+                  <li><a href="#">services</a></li>
+                  <li><a href="#">portfolio</a></li>
+                  <li><a href="#">team</a></li>
+                  <li><a href="#">contact</a></li>
+                  <li><a href="#">about</a></li>
+                  <div class="closed-menu">
+                    <a href="#">×</a>
+                  </div>
+                </ul>
+              </nav>
+              <div class="menu-toggle">
+                <div class="bar-1"></div>
+                <div class="bar-2"></div>
+                <div class="bar-3"></div>
+              </div>
+            </div>
+          </header>
+          <!-- site header end -->
+      
+         
     <div class="hero">
         <div class="hero-wrapper">
             <div class="img-container">
@@ -92,8 +125,8 @@
             <p>You get up from the kitchen table and remember to clear your plate, your Mom is already happy! Next, you dutifully scrape your leftovers into the kitchen trash, a quick, helpful way to tidy up. But Mother Earth is sad. This daily habit happens almost automatically. But have you ever thought about what happens to that uneaten food once it’s out of sight?</p>
             <p>The reality is that most food scraps end up in landfills, where valuable nutrients are wasted instead of going back into the soil.</p>
         </div>
-        <div id="image-left" class="overlay-image" style="background-image: url('images/scean-1.avif');"></div>
-        <div id="image-right" class="overlay-image" style="background-image: url('images/scean-2.avif');"></div>
+        <div id="image-left" class="overlay-image" style="background-image: url('images/scean-2.avif');"></div>
+        <div id="image-right" class="overlay-image" style="background-image: url('images/scean-1.avif');"></div>
       </section>
     
       <section id="section3">
@@ -185,7 +218,83 @@
             <p>The reality is that most food scraps end up in landfills, where valuable nutrients are wasted instead of going back into the soil.</p>
         </div>
     </section>
+    <section id="section6">
+        <div class="video_and_text">
+            <div class="video-container">
+                <video src="videos/demo-vid.mp4" autoplay muted loop></video>
+            </div>
+            <div class="text-container">
+                <p id="paragraph-1">Composting benefits the</p>
+                <p id="paragraph-2">planet in many ways</p>
+            </div>
+        </div>
+    </section>
+ <!-- site-footer start -->
+ <footer class="site-footer">
+    <!-- container start -->
+    <div class="container">
+      <div class="footer-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-logo">
+              <a href="#"><img src="images/site-logo.png" alt="site-logo"></a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam commodi assumenda ad dolores modi, vel.</p>
+              <ul class="social-icons">
+                <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+                <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+                <li><a href="#"><i class="ri-instagram-fill"></i></a></li>
+                <li><a href="#"><i class="ri-linkedin-box-fill"></i></a></li>
+              </ul>
+            </div>
 
+          </div>
+          <div class="col-md-2">
+            <div class="useful-links">
+              <h4>useful links</h4>
+              <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about-us</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Privacy policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="our_service">
+              <h4>our service</h4>
+              <ul>
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Product Management</a></li>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">Graphic Design</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="contact-us">
+              <h4>contact us</h4>
+              <p>A108 Adam Street <br>
+                New York, NY 535022
+                United States</p>
+                <ul>
+                  <li><p><span>Phone:</span>+1 5589 55488 55</p></li>
+                  <li><p><span>Email:</span>info@example.com</p></li>
+                </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- container end -->
+  </footer>
+  <!-- site-footer end -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/script.js"></script>

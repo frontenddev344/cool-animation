@@ -1,3 +1,15 @@
+
+
+$(document).ready(function(){
+  $(".menu-toggle").click(function(){
+    $("body").addClass("toggle");
+  });
+  $(".closed-menu").click(function(){
+    $("body").removeClass("toggle");
+  });
+});
+// toogle menu 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const gallery1 = document.querySelector('#gallery-1');
@@ -27,7 +39,7 @@ tl.to(gallery1, {
 ScrollTrigger.create({
     trigger: "#section2",
     start: "top top",
-    end: "+=100vh - 200vh",
+    end: "200vh - 100vh",
     pin: true,
     pinSpacing: true,
     // markers:true
@@ -138,3 +150,36 @@ gsap.to(".wheel", {
 
 
 // wheel slider end 
+
+// Create a timeline for section6 animations
+let section6Timeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#section6",
+        start: "top top",
+        end: "bottom 50%",
+        scrub: 4,
+        pin: true,
+        anticipatePin: 1,
+        // markers: true
+    }
+});
+
+// Add animations to the timeline
+section6Timeline
+    .to("#section6 .video-container video", {
+        scale: 1,
+        rotate: 0.5,
+        duration: 3
+    }, "para")
+    .from("#paragraph-1", {
+        x: "-140%",
+        opacity: 0.5,
+        duration: 2
+    }, "para")
+
+    .from("#paragraph-2", {
+        x: "140%",
+        opacity: 0,
+        duration: 2
+    }, "para");
+
