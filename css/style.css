@@ -249,7 +249,7 @@ padding: 80px 0;
     padding: 15px;
     background: linear-gradient(#d7cfcf, #9198e5);
     border-radius: 20px;
-    height: 90vh;
+    height: 100vh;
 }
 
 .hero-content h2 {
@@ -401,6 +401,37 @@ div#gallery-2 {
     margin-bottom: -100vh;
 }
 
+/* team section start  */
+.team-cards {
+    display: flex;
+    position: relative;
+}
+.team-card {
+    border-radius: 12px;
+}
+
+.team-card img {
+    border-radius: inherit;
+}
+
+.team-cards .card-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+.team-cards .card-btn a {
+    display: inline-block;
+    background: crimson;
+    line-height: normal;
+    padding: 6px 12px;
+    color: #fff;
+    border-radius: 40px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+/* team section end  */
 /* image opne section start  */
 #section1, #section2, #section3{
     height: 100vh;
@@ -421,7 +452,11 @@ div#gallery-2 {
     position: absolute;
     z-index: 3;
     top: 0;
-    transform: translateY(-100%);
+    transform: translateY(-120%);
+}
+
+#top-img img {
+    /* transform: rotate(-90deg); */
 }
 
 #section2 h2 {

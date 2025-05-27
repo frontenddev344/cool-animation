@@ -11,6 +11,8 @@ $(document).ready(function(){
 
 gsap.registerPlugin(ScrollTrigger);
 
+// bentoGrid animation 
+
 bentoGridimg1 = document.querySelector('.bento-grid-item:nth-of-type(1) .bento-grid-img')
 bentoGridimg2 = document.querySelector('.bento-grid-item:nth-of-type(2) .bento-grid-img')
 bentoGridimg3 = document.querySelector('.bento-grid-item:nth-of-type(3) .bento-grid-img')
@@ -25,7 +27,7 @@ const bentoGrid = gsap.timeline({
     end: "bottom bottom",
     scrub: 2,
     // pin: true,
-    markers: true
+    // markers: true
   }
 })
 
@@ -79,6 +81,8 @@ bentoGrid.from(bentoGridimg6,{
 },"grid")
 
 
+// gallery animation 
+
 const gallery1 = document.querySelector('#gallery-1');
 const gallery2 = document.querySelector('#gallery-2');
 
@@ -103,13 +107,67 @@ tl.to(gallery1, {
 }, "a")
 
 
+// team card animation 
+const cardWrap = document.querySelector(".team-cards");
+const cardBtn = document.querySelector(".card-btn");
+const teamCards = document.querySelectorAll('.team-card');
+let cardbtnAnchor = cardBtn.querySelector("a")
+
+
+cardWrap.addEventListener("mouseenter", function(){
+  gsap.to(cardBtn, {
+    scale:1,
+    opacity: 1,
+    duration: 0.3,
+    ease: "elastic.out(1, 0.3)"
+  });
+});
+cardWrap.addEventListener("mousemove", function (dets) {
+  const bounds = cardWrap.getBoundingClientRect();
+  const x = dets.clientX - bounds.left;
+  const y = dets.clientY - bounds.top;
+  gsap.to(cardBtn, {
+    x: x,
+    y: y
+  });
+});
+
+cardWrap.addEventListener("mouseleave", function(){
+  gsap.to(cardBtn, {
+    scale:0,
+    opacity: 0,
+    duration: 0.3,
+    ease: "elastic.out(1, 0.3)"
+  });
+});
+
+
+teamCards.forEach(function(c) {
+  c.addEventListener("mouseenter", function(e){
+  let name = c.querySelector("img").alt;
+ cardbtnAnchor.innerHTML = `<a href="#" target="_blank"> <i class="ri-arrow-right-up-line"></i> ${name}</a>`;
+ gsap.to(c, {
+  y:-20
+ })
+});
+c.addEventListener("mouseleave", function(e){
+  gsap.to(c, {
+    y:0
+   })
+});
+
+
+});
+
+
+
 // left and right image animtaion 
 
 const tl2 = gsap.timeline({
   scrollTrigger: {
     trigger: "#section2",
     start: "top top",
-    end: "+=100vh",
+    end: "bottom center",
     scrub: 1,
     pin: true,
     pinSpacing: true,
@@ -129,9 +187,9 @@ tl2.to("#image-left", {
   duration: 2
 }, "a")
 .to("#top-img", {
-  y: 40,
+  y: "70vh",
   ease: "power2.out",
-  duration: 2
+  duration: 5
 }, "a");
 
   
@@ -157,7 +215,6 @@ document.querySelectorAll(".card").forEach(function(cards){
 
 // wheel slider 
 
-console.clear();
 gsap.registerPlugin(ScrollTrigger);
 
 let wheel = document.querySelector(".wheel");
