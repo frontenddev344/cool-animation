@@ -1,5 +1,4 @@
 
-
 $(document).ready(function(){
   $(".menu-toggle").click(function(){
     $("body").addClass("toggle");
@@ -12,6 +11,74 @@ $(document).ready(function(){
 
 gsap.registerPlugin(ScrollTrigger);
 
+bentoGridimg1 = document.querySelector('.bento-grid-item:nth-of-type(1) .bento-grid-img')
+bentoGridimg2 = document.querySelector('.bento-grid-item:nth-of-type(2) .bento-grid-img')
+bentoGridimg3 = document.querySelector('.bento-grid-item:nth-of-type(3) .bento-grid-img')
+bentoGridimg4 = document.querySelector('.bento-grid-item:nth-of-type(4) .bento-grid-img')
+bentoGridimg5 = document.querySelector('.bento-grid-item:nth-of-type(5) .bento-grid-img')
+bentoGridimg6 = document.querySelector('.bento-grid-item:nth-of-type(6) .bento-grid-img')
+
+const bentoGrid = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".bento-grid",
+    start: "top 90%",
+    end: "bottom bottom",
+    scrub: 2,
+    // pin: true,
+    markers: true
+  }
+})
+
+bentoGrid.from(bentoGridimg1,{
+  y:-600,
+  x:-250,
+  rotate: 10,
+  scale: 0.5, 
+  duration: 2,
+  ease: "power4.in",
+},"grid")
+bentoGrid.from(bentoGridimg2,{
+  y:-400,
+  x:-700,
+  scale: 0.7, 
+  rotate: -15, 
+  duration: 2,
+  ease: "power4.in",
+},"grid")
+bentoGrid.from(bentoGridimg3,{
+  y:-700,
+  x:280,
+  scale: 0.7, 
+  rotate: 10, 
+  duration: 2,
+  ease: "power4.in",
+},"grid")
+bentoGrid.from(bentoGridimg4,{
+  y:-480,
+  x:-350,
+  scale: 0.6, 
+  rotate: 10, 
+  duration: 2,
+  ease: "power4.in",
+},"grid")
+bentoGrid.from(bentoGridimg5,{
+  y:-800,
+  x:550,
+  scale: 0.3, 
+  rotate: 10, 
+  duration: 2,
+  ease: "power4.in",
+},"grid")
+bentoGrid.from(bentoGridimg6,{
+  y:-570,
+  x:520,
+  scale: 0.5, 
+  rotate: -20, 
+  duration: 2,
+  ease: "power4.in",
+},"grid")
+
+
 const gallery1 = document.querySelector('#gallery-1');
 const gallery2 = document.querySelector('#gallery-2');
 
@@ -19,9 +86,10 @@ const tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.gallery',
         start: 'top top',
-        end: 'bottom bottom',
+        end: 'bottom 50%',
         scrub: 4,
-        pin: true
+        pin: true,
+        // markers: true
     }
 });
 
@@ -32,45 +100,39 @@ tl.to(gallery1, {
 .to(gallery2, {
     y: '-100vh',
     duration: 5
-}, "a");
+}, "a")
 
-// new section animtaion 
 
-ScrollTrigger.create({
+// left and right image animtaion 
+
+const tl2 = gsap.timeline({
+  scrollTrigger: {
     trigger: "#section2",
     start: "top top",
-    end: "200vh - 100vh",
+    end: "+=100vh",
+    scrub: 1,
     pin: true,
     pinSpacing: true,
-    // markers:true
-  });
-  
-  gsap.set("#image-left", { x: "-100%" });
-  gsap.set("#image-right", { x: "100%" });
-  
-  gsap.to("#image-left", {
-    x: "0%",
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#section2",
-      start: "top top",
-      end: "+=100vh",
-      duration: 2,
-      scrub: 1
-    }
-  });
-  
-  gsap.to("#image-right", {
-    x: "0%",
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#section2",
-      start: "top top",
-      end: "+=100vh",
-      duration: 2,
-      scrub: 1
-    }
-  });
+    // markers: true
+  }
+});
+
+// Animate all together (at label "a")
+tl2.to("#image-left", {
+  x: "0%",
+  ease: "power2.out",
+  duration: 2
+}, "a")
+.to("#image-right", {
+  x: "0%",
+  ease: "power2.out",
+  duration: 2
+}, "a")
+.to("#top-img", {
+  y: 40,
+  ease: "power2.out",
+  duration: 2
+}, "a");
 
   
 // staking cards 
@@ -94,8 +156,6 @@ document.querySelectorAll(".card").forEach(function(cards){
 
 
 // wheel slider 
-
-
 
 console.clear();
 gsap.registerPlugin(ScrollTrigger);
@@ -168,7 +228,7 @@ let section6Timeline = gsap.timeline({
 section6Timeline
     .to("#section6 .video-container video", {
         scale: 1,
-        rotate: 0.5,
+        rotate: 0,
         duration: 3
     }, "para")
     .from("#paragraph-1", {
