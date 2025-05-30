@@ -97,7 +97,7 @@ ul{
 .site-nav li a::after {
     content: "";
     position: absolute;
-    border-bottom: 2px solid #f39c12;
+    border-bottom: 2px solid crimson;
     width: 0%;
     top: 100%;
     left: 0%;
