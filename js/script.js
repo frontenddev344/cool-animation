@@ -142,7 +142,8 @@ cardWrap.addEventListener("mouseleave", function(){
 });
 
 
-teamCards.forEach(function(c) {
+teamCards.forEach(function(c, idx) {
+  c.setAttribute("style", `--count:${idx}` );
   c.addEventListener("mouseenter", function(e){
   let name = c.querySelector("img").alt;
  cardbtnAnchor.innerHTML = `<a href="#" target="_blank"> <i class="ri-arrow-right-up-line"></i> ${name}</a>`;
@@ -283,20 +284,21 @@ let section6Timeline = gsap.timeline({
 
 // Add animations to the timeline
 section6Timeline
-    .to("#section6 .video-container video", {
-        scale: 1,
-        rotate: 0,
-        duration: 3
-    }, "para")
-    .from("#paragraph-1", {
-        x: "-140%",
-        opacity: 0.5,
-        duration: 2
-    }, "para")
+.to("#section6 .video-container video", {
+    scale: 1,
+    rotate: 0,
+    duration: 3
+}, "para")
+.from("#paragraph-1", {
+    x: "-140%",
+    opacity: 0.5,
+    duration: 2
+}, "para")
 
-    .from("#paragraph-2", {
-        x: "140%",
-        opacity: 0,
-        duration: 2
-    }, "para");
+.from("#paragraph-2", {
+    x: "140%",
+    opacity: 0,
+    duration: 2
+}, "para");
+
 
