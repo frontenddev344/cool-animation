@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inner page</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>inner page</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+            rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <style>
       
 /* slide-card-sec start  */
 .slide-card-sec {
@@ -73,7 +75,7 @@
 /* testimonial sec start  */
 
 .testimonials-sec {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     padding: 80px 0;
     background: #B2CD9C;
 }
@@ -85,8 +87,6 @@
     box-shadow: 0 0 10px 0 rgba(0 0 0/20%);
     margin: 0 0 40px;
     position: relative;
-    position: sticky;
-    top: 150px;
 }
 
 .testimonial-card::after {
@@ -102,226 +102,514 @@
     transform: rotate(-15deg);
 }
 
+.testimonial-image {
+  position: sticky;
+  top: 20%;
+}
 
+.testimonial-stack {
+    height: 800px;
+    overflow: hidden;
+}
+
+/* testimonial sec end  */
+
+/* horizontal-card-sec start  */
+.horizontal-card-sec{
+    /* min-height: 100vh; */
+    background: #ce88bc;
+    overflow: hidden;
+}
+.horizontal-card-container {
+    display: flex;
+    gap: 40px;
+    padding: 80px 50px;
+}
+.horizontal-card {
+    min-width: 350px;
+}
+.horizontal-card-content {
+    padding: 20px;
+    color: #fff;
+}
+
+/* horizontal-card-sec end  */
+
+/* swipe-section start  */
+.swipe-section {
+    height: 100vh;
+    overflow: hidden;
+}
+/* swipe-section end  */
+
+.swipe-section {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: #ddd;
+}
+.swipe-section .panel {
+   /* transform: translateY(100%); */
+   position: absolute;
+   /* backdrop-filter: blur(10px); */
+}
+.panel {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.red {
+    background: rgba(219, 88, 88, 0.548);
+}
+.blue {
+    background: rgba(82, 82, 216, 0.315);
+}
+.yellow {
+    background: rgba(209, 209, 98, 0.904);
+}
+.green {
+    background: rgba(0, 128, 0, 0.37);
+}
+
+.swipe-section-horizontal {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+}
+.panel-horizontal {
+    width: 100%;
+    height: 100vh;
+}
+
+.swipe-section-horizontal .panel {
+    min-width: 100%;
+}
+/* swipe-section end  */
     </style>
-</head>
-<body>
-       <!-- site-header start -->
-       <header class="site-header">
-        <div class="container">
-          <div class="site-logo">
-            <a href="#"><img src="images/site-logo.png" alt="site-logo"></a>
-          </div>
-          <nav class="site-nav">
-            <ul>
-              <li><a href="#">home</a></li>
-              <li><a href="#">about</a></li>
-              <li><a href="#">services</a></li>
-              <li><a href="#">portfolio</a></li>
-              <li><a href="#">team</a></li>
-              <li><a href="#">contact</a></li>
-              <li><a href="#">about</a></li>
-              <div class="closed-menu">
-                <a href="#">×</a>
-              </div>
-            </ul>
-          </nav>
-          <div class="menu-toggle">
-            <div class="bar-1"></div>
-            <div class="bar-2"></div>
-            <div class="bar-3"></div>
-          </div>
-        </div>
-      </header>
-      <!-- site header end -->
-      <!-- slide-card-sec start  -->
-    <section class="slide-card-sec">
-        <div class="container">
-            <h2>GROW TOGETHER: <br>
-                REAL LIFE EXPERIENCES</h2>
-            <div class="slide-card-container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="slide-card">
-                            <div class="slide-card-img">
-                                <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg" alt="Mountain Hiking">
-                            </div>
-                            <div class="card-content">
-                                <h3>Mountain Adventure</h3>
-                                <p>Experience the thrill of hiking through breathtaking mountain trails and discovering hidden natural wonders.</p>
+    </head>
+    <body>
+        <!-- site-header start -->
+        <header class="site-header">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="#"><img src="images/site-logo.png"
+                            alt="site-logo"></a>
+                </div>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">services</a></li>
+                        <li><a href="#">portfolio</a></li>
+                        <li><a href="#">team</a></li>
+                        <li><a href="#">contact</a></li>
+                        <li><a href="#">about</a></li>
+                        <div class="closed-menu">
+                            <a href="#">×</a>
+                        </div>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <div class="bar-1"></div>
+                    <div class="bar-2"></div>
+                    <div class="bar-3"></div>
+                </div>
+            </div>
+        </header>
+        <!-- site header end -->
+        <!-- slide-card-sec start  -->
+        <section class="slide-card-sec">
+            <div class="container">
+                <h2>GROW TOGETHER: <br>
+                    REAL LIFE EXPERIENCES</h2>
+                <div class="slide-card-container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="slide-card">
+                                <div class="slide-card-img">
+                                    <img
+                                        src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg"
+                                        alt="Mountain Hiking">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Mountain Adventure</h3>
+                                    <p>Experience the thrill of hiking through
+                                        breathtaking mountain trails and
+                                        discovering hidden natural wonders.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="slide-card">
-                            <div class="slide-card-img">
-                                <img src="https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg" alt="Beach Sunset">
-                            </div>
-                            <div class="card-content">
-                                <h3>Coastal Retreat</h3>
-                                <p>Unwind on pristine beaches while watching spectacular sunsets paint the sky in vibrant colors.</p>
+                        <div class="col-md-4">
+                            <div class="slide-card">
+                                <div class="slide-card-img">
+                                    <img
+                                        src="https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg"
+                                        alt="Beach Sunset">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Coastal Retreat</h3>
+                                    <p>Unwind on pristine beaches while watching
+                                        spectacular sunsets paint the sky in
+                                        vibrant colors.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="slide-card">
-                            <div class="slide-card-img">
-                                <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg" alt="Forest Camping">
-                            </div>
-                            <div class="card-content">
-                                <h3>Forest Exploration</h3>
-                                <p>Immerse yourself in the tranquility of ancient forests and connect with nature through guided camping experiences.</p>
+                        <div class="col-md-4">
+                            <div class="slide-card">
+                                <div class="slide-card-img">
+                                    <img
+                                        src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg"
+                                        alt="Forest Camping">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Forest Exploration</h3>
+                                    <p>Immerse yourself in the tranquility of
+                                        ancient forests and connect with nature
+                                        through guided camping experiences.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- slide-card-sec end  -->
-    <section class="testimonials-sec">
-        <div class="container">
-            <div class="row align-items-start">
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="quote-icon">
-                            <i class="ri-double-quotes-l"></i>
-                        </div>
-                        <div class="testimonial-content">
-                            <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
-                            <div class="client-info">
-                                <h4>Sarah Johnson</h4>
-                                <span>CEO, Tech Innovations</span>
+        </section>
+        <!-- slide-card-sec end  -->
+        <!-- testimonials-sec start  -->
+        <section class="testimonials-sec">
+            <div class="container">
+                <div class="row align-items-start">
+                    <div class="col-md-6">
+                        <div class="testimonial-stack">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="ri-double-quotes-l"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
+                                    <div class="client-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <span>CEO, Tech Innovations</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="ri-double-quotes-l"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
+                                    <div class="client-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <span>CEO, Tech Innovations</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="ri-double-quotes-l"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
+                                    <div class="client-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <span>CEO, Tech Innovations</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="ri-double-quotes-l"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
+                                    <div class="client-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <span>CEO, Tech Innovations</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="ri-double-quotes-l"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
+                                    <div class="client-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <span>CEO, Tech Innovations</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="quote-icon">
-                            <i class="ri-double-quotes-l"></i>
-                        </div>
-                        <div class="testimonial-content">
-                            <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
-                            <div class="client-info">
-                                <h4>Sarah Johnson</h4>
-                                <span>CEO, Tech Innovations</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="quote-icon">
-                            <i class="ri-double-quotes-l"></i>
-                        </div>
-                        <div class="testimonial-content">
-                            <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
-                            <div class="client-info">
-                                <h4>Sarah Johnson</h4>
-                                <span>CEO, Tech Innovations</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="quote-icon">
-                            <i class="ri-double-quotes-l"></i>
-                        </div>
-                        <div class="testimonial-content">
-                            <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
-                            <div class="client-info">
-                                <h4>Sarah Johnson</h4>
-                                <span>CEO, Tech Innovations</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="quote-icon">
-                            <i class="ri-double-quotes-l"></i>
-                        </div>
-                        <div class="testimonial-content">
-                            <p>"Working with this team has been an absolute pleasure. Their dedication to excellence and attention to detail is unmatched. I couldn't be happier with the results!"</p>
-                            <div class="client-info">
-                                <h4>Sarah Johnson</h4>
-                                <span>CEO, Tech Innovations</span>
+                    <!-- end  -->
+                    <div class="col-md-6">
+                        <div class="testimonial-image-wrapper">
+                            <div class="testimonial-image">
+                                <img
+                                    src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg"
+                                    alt="Happy Client">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="testimonial-image">
-                        <img src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg" alt="Happy Client">
+            </div>
+        </section>
+        <section class="section"></section>
+        <!-- testimonials-sec end  -->
+         <section class="horizontal-card-sec">
+            <div class="horizontal-card-container">
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg" alt="Beach Paradise">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Beach Paradise</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg" alt="Forest Retreat">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Forest Retreat</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.</p>
+                    </div>
+                </div>
+                <div class="horizontal-card">
+                    <div class="horizontal-card-img">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Desert Safari">
+                    </div>
+                    <div class="horizontal-card-content">
+                        <h3>Desert Safari</h3>
+                        <p>Experience the thrill of hiking through
+                            breathtaking mountain trails and
+                            discovering hidden natural wonders.
+                            last card
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- site-footer start -->
- <footer class="site-footer">
-    <!-- container start -->
-    <div class="container">
-      <div class="footer-body">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="footer-logo">
-              <a href="#"><img src="images/site-logo.png" alt="site-logo"></a>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam commodi assumenda ad dolores modi, vel.</p>
-              <ul class="social-icons">
-                <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
-                <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
-                <li><a href="#"><i class="ri-instagram-fill"></i></a></li>
-                <li><a href="#"><i class="ri-linkedin-box-fill"></i></a></li>
-              </ul>
             </div>
-
-          </div>
-          <div class="col-md-2">
-            <div class="useful-links">
-              <h4>useful links</h4>
-              <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">about-us</a></li>
-                <li><a href="#">services</a></li>
-                <li><a href="#">Terms of service</a></li>
-                <li><a href="#">Privacy policy</a></li>
-              </ul>
+         </section>
+         <section class="swipe-section">
+            <div class="panel red">
+                <h2>section 1</h2>
             </div>
-          </div>
-          <div class="col-md-2">
-            <div class="our_service">
-              <h4>our service</h4>
-              <ul>
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">Web Development</a></li>
-                <li><a href="#">Product Management</a></li>
-                <li><a href="#">Marketing</a></li>
-                <li><a href="#">Graphic Design</a></li>
-              </ul>
+            <div class="panel blue">
+                <h2>section 2</h2>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="contact-us">
-              <h4>contact us</h4>
-              <p>A108 Adam Street <br>
-                New York, NY 535022
-                United States</p>
-                <ul>
-                  <li><p><span>Phone:</span>+1 5589 55488 55</p></li>
-                  <li><p><span>Email:</span>info@example.com</p></li>
-                </ul>
+            <div class="panel yellow">
+                <h2>section 3</h2>
             </div>
-          </div>
+            <div class="panel green">
+                <h2>section 4</h2>
+            </div>
+         </section>
+         <section class="swipe-section-horizontal">
+            <div class="panel red">
+                <h2>section 1</h2>
+            </div>
+            <div class="panel blue">
+                <h2>section 2</h2>
+            </div>
+            <div class="panel yellow">
+                <h2>section 3</h2>
+            </div>
+            <div class="panel green">
+                <h2>section 4</h2>
+            </div>
+         </section>
+        <!-- site-footer start -->
+        <footer class="site-footer">
+            <!-- container start -->
+            <div class="container">
+                <div class="footer-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="footer-logo">
+                                <a href="#"><img src="images/site-logo.png"
+                                        alt="site-logo"></a>
+                                <p>Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quam commodi assumenda ad
+                                    dolores modi, vel.</p>
+                                <ul class="social-icons">
+                                    <li><a href="#"><i
+                                                class="ri-twitter-fill"></i></a></li>
+                                    <li><a href="#"><i
+                                                class="ri-facebook-fill"></i></a></li>
+                                    <li><a href="#"><i
+                                                class="ri-instagram-fill"></i></a></li>
+                                    <li><a href="#"><i
+                                                class="ri-linkedin-box-fill"></i></a></li>
+                                </ul>
+                            </div>
 
-        </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="useful-links">
+                                <h4>useful links</h4>
+                                <ul>
+                                    <li><a href="#">home</a></li>
+                                    <li><a href="#">about-us</a></li>
+                                    <li><a href="#">services</a></li>
+                                    <li><a href="#">Terms of service</a></li>
+                                    <li><a href="#">Privacy policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="our_service">
+                                <h4>our service</h4>
+                                <ul>
+                                    <li><a href="#">Web Design</a></li>
+                                    <li><a href="#">Web Development</a></li>
+                                    <li><a href="#">Product Management</a></li>
+                                    <li><a href="#">Marketing</a></li>
+                                    <li><a href="#">Graphic Design</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-us">
+                                <h4>contact us</h4>
+                                <p>A108 Adam Street <br>
+                                    New York, NY 535022
+                                    United States</p>
+                                <ul>
+                                    <li><p><span>Phone:</span>+1 5589 55488
+                                            55</p></li>
+                                    <li><p><span>Email:</span>info@example.com</p></li>
+                                </ul>
+                            </div>
+                        </div>
 
-      </div>
+                    </div>
 
-    </div>
-    <!-- container end -->
-  </footer>
-  <!-- site-footer end -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script>
-      // slide-card-container animation 
+                </div>
+
+            </div>
+            <!-- container end -->
+        </footer>
+        <!-- site-footer end -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+// slide-card-container animation start
 
   let cardSlideTl = gsap.timeline({
     scrollTrigger:{
@@ -340,39 +628,131 @@
     stagger:0.5,
     ease:"power2.out"
   })
+// slide-card-container animation end
+
+// testimonial sec start 
+
+let testimonialTl = gsap.timeline({
+    scrollTrigger:{
+        trigger:".testimonials-sec",
+        start: "top 10%",
+        end: "bottom 60%",
+        pin: true,
+        // markers:true,
+        scrub:2
+    }
+})
+
+
+document.querySelectorAll(".testimonial-card").forEach((card, index) => {
+   let cardHeight = card.getBoundingClientRect().height
+  testimonialTl.to(card, {
+    // opacity: 0,
+    y: -cardHeight * index,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.5,
+    // postion: "sticky",
+    // top: "20%",
+  });
+});
+// testimonial sec end 
+
+// horizontal-card-sec start 
+let horizontalCardTl = gsap.timeline({
+    scrollTrigger:{
+        trigger:".horizontal-card-sec",
+        start: "top 30%",
+        end: "bottom center",
+        pin: true,
+        scrub:2,
+        // markers:true,
+    }
+})
 
 
 
-  // let testiTL = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".testimonials-sec",
-  //     start: "top top",
-  //     end: "bottom bottom",
-  //     pin: true,
-  //     markers: true,
-  //     scrub: 1
-  //   }
-  // });
+const cards = document.querySelectorAll(".horizontal-card");
 
-  // // Get all testimonial cards
-  // const testimonialCards = document.querySelectorAll('.testimonial-card');
-  
-  // // Create stacked effect for each card
-  // testimonialCards.forEach((card, index) => {
-  //   testiTL.to(card, {
-  //     y: -200 * index, // Stack cards vertically
-  //     opacity: 1,
-  //     duration: 1,
-  //     ease: "power2.inOut"
-  //   }, index * 0.2); // Stagger the animations
-  // });
+let totalWidth = 0;
+let oneCardWidth = 0;
+cards.forEach((card) => {
+  totalWidth += card.getBoundingClientRect().width;
+  oneCardWidth = card.getBoundingClientRect().width;
+});
 
-  // // Unpin after all cards are stacked
-  // testiTL.to(".testimonials-sec", {
-  //   pin: false,
-  //   duration: 0.1
-  // });
-  
+
+// console.log("Total width of all cards:", totalWidth);
+
+
+let horizontalCardContainer = document.querySelector(".horizontal-card-container")
+let horizontalCardContainerWidth = horizontalCardContainer.getBoundingClientRect().width
+horizontalCardTl.to(horizontalCardContainer, {
+    x: -totalWidth + horizontalCardContainerWidth - oneCardWidth * 1.5,
+    duration:4,
+    ease:"power2.out"
+})
+
+// vertical-panels-sec start 
+
+let swipeSectionTl = gsap.timeline({
+    scrollTrigger:{
+        trigger:".swipe-section",
+        start: "top 10%",
+        end: "bottom top",
+        pin: true,
+        scrub:2,
+        // markers:true,
+    }           
+})
+
+let panels = document.querySelectorAll(".swipe-section .panel")
+let totalPanel = panels.length
+panels.forEach((panel, index) => {
+ 
+    gsap.set(panel, {
+        zIndex: totalPanel - index
+    })
+
+    swipeSectionTl.to(panel, {
+        y: "-100%",
+        duration:4,
+        // stagger:0.5,
+        ease:"power2.out"
+    })
+})
+
+// vertical-panels-sec end 
+
+// horizontal-panels-sec start 
+let hozSwipeSectionTl = gsap.timeline({
+    scrollTrigger:{
+        trigger:".swipe-section-horizontal",
+        start: "top 0",
+        end: "bottom 30%",
+        pin: true,
+        scrub:2,
+        // markers:true,
+    }
+})
+
+let hozPanels = document.querySelectorAll(".swipe-section-horizontal .panel")
+let totalHozPanelWidth = 0
+let singlePanelWidth = 0
+hozPanels.forEach((panel, index) => {
+    singlePanelWidth = panel.getBoundingClientRect().width
+    totalHozPanelWidth += panel.getBoundingClientRect().width
+    console.log(totalHozPanelWidth, singlePanelWidth)
+})
+
+
+hozSwipeSectionTl.to(hozPanels, {
+    x: -totalHozPanelWidth + singlePanelWidth - 60,
+    duration:4,
+    ease:"power2.out"
+})
+
+// horizontal-panels-sec end 
     </script>
-</body>
+    </body>
 </html>
