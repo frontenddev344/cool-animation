@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cool img gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<style>
+.contact-us {
+    padding: 80px 20px;
+    height: 100vh;
+    background: #e9eae7;
+    position: relative;
+    isolation: isolate;
+}
+.contact-us-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.form-group {
+    margin: 0 0 20px;
+}
+.form-control {
+    background: transparent;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+}
+button.submit-btn {
+    background: crimson;
+    border: 0;
+    padding: 10px 20px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.conatct-deatils h1 {
+    font-size: min(8vw, 150px);
+    text-transform: capitalize;
+    margin: 0 0 60px;
+}
+
+.address-item {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+#cursor{
+    width: 20px;
+    height: 20px;
+    background: #222;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+/* .contact-us-wrap{
+    background-image: url("https://images.pexels.com/photos/3646932/pexels-photo-3646932.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+
+.circle-mask {
+  position:absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+  /* mix-blend-mode: multiply;  */
+  transition: opacity 0.3s ease;
+}
+
+.circle-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reveal-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  mask-image: radial-gradient(circle 100px at center, black 100%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle 100px at center, black 100%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: -9999px -9999px;
+  -webkit-mask-position: -9999px -9999px;
+  transition: mask-position 0.1s, -webkit-mask-position 0.1s;
+}
+</style>
+<body>
+        <!-- site-header start -->
+        <header class="site-header">
+            <div class="container">
+              <div class="site-logo">
+                <a href="#"><img src="images/site-logo.png" alt="site-logo"></a>
+              </div>
+              <nav class="site-nav">
+                <ul>
+                  <li><a href="#">home</a></li>
+                  <li><a href="#">about</a></li>
+                  <li><a href="#">services</a></li>
+                  <li><a href="#">portfolio</a></li>
+                  <li><a href="#">team</a></li>
+                  <li><a href="#">contact</a></li>
+                  <li><a href="#">about</a></li>
+                  <div class="closed-menu">
+                    <a href="#">×</a>
+                  </div>
+                </ul>
+              </nav>
+              <div class="menu-toggle">
+                <div class="bar-1"></div>
+                <div class="bar-2"></div>
+                <div class="bar-3"></div>
+              </div>
+            </div>
+          </header>
+          <!-- site header end -->
+    <div id="cursor"></div>
+
+   <section class="contact-us">
+    <div class="reveal-image"></div>
+    <div class="circle-mask"></div>
+      
+    <div class="contact-us-wrap">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="conatct-deatils">
+                    <h1>contact us</h1>
+                <div class="address-info">
+                    <div class="address-item">
+                        <i class="ri-map-pin-line"></i>
+                        <div class="address-content">
+                            <h3>Our Location</h3>
+                            <p>123 Business Street, Suite 100<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                    <div class="address-item">
+                        <i class="ri-mail-line"></i>
+                        <div class="address-content">
+                            <h3>Email Us</h3>
+                            <p>info@example.com<br>support@example.com</p>
+                        </div>
+                    </div>
+                    <div class="address-item">
+                        <i class="ri-phone-line"></i>
+                        <div class="address-content">
+                            <h3>Call Us</h3>
+                            <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-form">
+                <form class="contact-form-wrapper">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+ <!-- site-footer start -->
+ <footer class="site-footer">
+    <!-- container start -->
+    <div class="container">
+      <div class="footer-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-logo">
+              <a href="#"><img src="images/site-logo.png" alt="site-logo"></a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam commodi assumenda ad dolores modi, vel.</p>
+              <ul class="social-icons">
+                <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+                <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+                <li><a href="#"><i class="ri-instagram-fill"></i></a></li>
+                <li><a href="#"><i class="ri-linkedin-box-fill"></i></a></li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col-md-2">
+            <div class="useful-links">
+              <h4>useful links</h4>
+              <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about-us</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Privacy policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="our_service">
+              <h4>our service</h4>
+              <ul>
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Product Management</a></li>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">Graphic Design</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="contact-us">
+              <h4>contact us</h4>
+              <p>A108 Adam Street <br>
+                New York, NY 535022
+                United States</p>
+                <ul>
+                  <li><p><span>Phone:</span>+1 5589 55488 55</p></li>
+                  <li><p><span>Email:</span>info@example.com</p></li>
+                </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- container end -->
+  </footer>
+  <!-- site-footer end -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        let cursor = document.querySelector("#cursor");
+        let body = document.querySelector("body");
+        let circleMask = document.querySelector(".circle-mask")
+        const revealImage = document.querySelector('.reveal-image');
+
+        body.addEventListener("mousemove", (event) => {
+            let cursorHeight = cursor.getBoundingClientRect().height
+            let cursorWidth = cursor.getBoundingClientRect().width
+            console.log(cursorHeight, cursorWidth)
+            let valX = event.clientX - cursorWidth;
+            let valY = event.clientY - cursorHeight;
+            gsap.to(cursor, {
+                top: valY,
+                left: valX,
+                duration: 1,
+                ease: "back.out"
+            });
+
+            gsap.to(revealImage, {
+                maskPosition: `${event.clientX}px ${event.clientY}px`,
+                webkitMaskPosition: `${event.clientX}px ${event.clientY}px`,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+           
+        });
+
+        container.addEventListener("mouseenter", () => {
+         gsap.to(circleMask,{
+            opacity:1,
+            duration: 0.5
+         })
+        });
+
+        container.addEventListener("mouseleave", () => {
+            gsap.to(circleMask,{
+            opacity:0,
+            duration: 0.5
+         })
+        });
+    </script>
+</body>
+</html>

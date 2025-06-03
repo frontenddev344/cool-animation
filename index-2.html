@@ -78,15 +78,18 @@
     /* min-height: 100vh; */
     padding: 80px 0;
     background: #B2CD9C;
+    /* overflow: hidden; */
 }
 
 .testimonial-card {
     background: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 40px;
     box-shadow: 0 0 10px 0 rgba(0 0 0/20%);
-    margin: 0 0 40px;
-    position: relative;
+    margin: 120px 0 0;
+    max-width: 450px;
+    position: sticky;
+    top: 150px;
 }
 
 .testimonial-card::after {
@@ -102,14 +105,17 @@
     transform: rotate(-15deg);
 }
 
-.testimonial-image {
+/* .testimonial-image {
   position: sticky;
   top: 20%;
-}
+} */
 
 .testimonial-stack {
-    height: 800px;
-    overflow: hidden;
+    height:min-content;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* testimonial sec end  */
@@ -127,6 +133,7 @@
 }
 .horizontal-card {
     min-width: 350px;
+   
 }
 .horizontal-card-content {
     padding: 20px;
@@ -188,6 +195,71 @@
     min-width: 100%;
 }
 /* swipe-section end  */
+
+/* scroll gallery section start  */
+.scroll-gallery{
+   padding: 80px 0;
+   background-color: #e0f7fa;
+}
+.right {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-img-wrapper{
+    position: relative;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+.gallery-img img {
+    width: 100%;
+    height: 100%;   
+    object-fit: cover;
+    /* position: absolute;
+    inset: 0; */
+}
+.left-content-details {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-content a {
+    display: inline-block;
+    background: crimson;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 14px;
+}
+
+
+.gallery-img {
+  position: relative;
+}
+
+/* .gallery-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+} */
+
+/* .gallery-img img.active {
+  opacity: 1;
+  z-index: 1;
+} */
+
+/* scroll gallery section end  */
     </style>
     </head>
     <body>
@@ -530,6 +602,69 @@
             </div>
          </section>
         <!-- site-footer start -->
+         <section class="scroll-gallery">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="left">
+                            <div class="left-content-wrapper">
+                                <div class="left-content-details">
+                                    <div class="left-content">
+                                        <h2>Nature Gallery</h2>
+                                        <p>Explore our stunning collection of nature photography showcasing breathtaking landscapes and wildlife moments.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="left-content-details">
+                                    <div class="left-content">
+                                        <h2>Urban Gallery</h2>
+                                        <p>Discover the beauty of city life through our urban photography collection featuring architecture and street scenes.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="left-content-details">
+                                    <div class="left-content">
+                                        <h2>Portrait Gallery</h2>
+                                        <p>View our curated selection of portrait photography capturing the essence and emotions of people from around the world.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="left-content-details">
+                                    <div class="left-content">
+                                        <h2>Travel Gallery</h2>
+                                        <p>Journey through our travel photography collection featuring iconic landmarks and hidden gems from various destinations.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="left-content-details">
+                                    <div class="left-content">
+                                        <h2>Abstract Gallery</h2>
+                                        <p>Experience our abstract photography collection that transforms ordinary subjects into extraordinary artistic expressions.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="right">
+                            <div class="gallery-img-wrapper">
+                                <div class="gallery-img"> 
+                                    <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg" alt="Nature landscape">
+                                    <img src="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg" alt="Urban cityscape">
+                                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Portrait photography">
+                                    <img src="https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg" alt="Travel destination">
+                                    <img src="https://images.pexels.com/photos/2110951/pexels-photo-2110951.jpeg" alt="Abstract art">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+               
+                
+            </div>
+         </section>
         <footer class="site-footer">
             <!-- container start -->
             <div class="container">
@@ -638,26 +773,19 @@ let testimonialTl = gsap.timeline({
     scrollTrigger:{
         trigger:".testimonials-sec",
         start: "top 10%",
-        end: "bottom 60%",
-        pin: true,
+        end: "bottom 80%",
+        pin:".testimonial-image",
         // markers:true,
         scrub:2
     }
 })
 
-
 document.querySelectorAll(".testimonial-card").forEach((card, index) => {
-   let cardHeight = card.getBoundingClientRect().height
-  testimonialTl.to(card, {
-    // opacity: 0,
-    y: -cardHeight * index,
-    duration: 1,
-    ease: "power2.out",
-    stagger: 0.5,
-    // postion: "sticky",
-    // top: "20%",
+  gsap.set(card, {
+    rotate: index % 2 === 0 ? 8 : -8 
   });
 });
+
 // testimonial sec end 
 
 // horizontal-card-sec start 
@@ -744,7 +872,7 @@ let singlePanelWidth = 0
 hozPanels.forEach((panel, index) => {
     singlePanelWidth = panel.getBoundingClientRect().width
     totalHozPanelWidth += panel.getBoundingClientRect().width
-    console.log(totalHozPanelWidth, singlePanelWidth)
+    // console.log(totalHozPanelWidth, singlePanelWidth)
 })
 
 
@@ -755,6 +883,165 @@ hozSwipeSectionTl.to(hozPanels, {
 })
 
 // horizontal-panels-sec end 
+
+
+ let scrollGalleryTl = gsap.timeline({
+    scrollTrigger:{
+        trigger:".scroll-gallery",
+        start: "top -10%",
+        end: "bottom bottom",
+        pin:".gallery-img-wrapper",
+        // markers:true
+    }
+})
+
+
+  const colors = [
+    "#e0f7fa", // Nature
+    "#ffe082", // Urban
+    "#f8bbd0", // Portrait
+    "#c5e1a5", // Travel
+    "#d1c4e9"  // Abstract
+  ];
+
+
+const scrollGallery = document.querySelector(".scroll-gallery");
+const sections = document.querySelectorAll(".left-content-details");
+const galleryImages = document.querySelectorAll(".gallery-img img");
+// Loop through each content block and trigger bg color change
+document.querySelectorAll(".left-content-details").forEach((section, index) => {
+    scrollGalleryTl.to(scrollGallery, {
+    backgroundColor: colors[index],
+    ease: "power2.out",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "bottom center",
+      scrub: 2,
+    //   markers:true
+    }
+  },);
+
+  if(galleryImages[index]){
+      
+    const img = galleryImages[index];
+    const imgHeight = img.getBoundingClientRect().height;
+      
+      scrollGalleryTl.to(img,{
+              y: -(imgHeight * index),
+              duration: 1,
+            //   stagger: 0.5,
+            ease: "power2.out",
+              scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 2,
+            // markers:true
+          } 
+          },);
+  }
+
+ 
+});
+
+
+
+
+// ================== 
+
+// const leftContentDetails = document.querySelectorAll(".left-content-details");
+// const gallery = document.querySelector(".scroll-gallery");
+
+// let bgColors = [
+//   "#e0f7fa", // Nature
+//   "#ffe082", // Urban
+//   "#f8bbd0", // Portrait
+//   "#c5e1a5", // Travel
+//   "#d1c4e9"  // Abstract
+// ];
+
+// let scrollGalleryTl = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: gallery,
+//     start: "top -10%",
+//     end: "bottom bottom",
+//     scrub: true,
+//     pin: ".gallery-img-wrapper",
+//     // markers: true,
+//   }
+// });
+
+// // Animate bg-color between each section
+// leftContentDetails.forEach((content, index) => {
+//   scrollGalleryTl.to(gallery, {
+//     backgroundColor: bgColors[index],
+//     duration: 1,
+//     ease: "none"
+//   }, index); 
+// });
+
+
+// // Initialize the GSAP timeline with ScrollTrigger for pinning
+// let scrollGalleryTl = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".scroll-gallery",
+//     start: "top -10%", // Start when the top of .scroll-gallery is 10% above the viewport
+//     end: "bottom bottom", // End when the bottom of .scroll-gallery hits the bottom of the viewport
+//     pin: ".gallery-img-wrapper", // Pin the image wrapper
+//     // markers: true // Uncomment for debugging
+//   }
+// });
+
+// const colors = [
+//   "#e0f7fa", // Nature
+//   "#ffe082", // Urban
+//   "#f8bbd0", // Portrait
+//   "#c5e1a5", // Travel
+//   "#d1c4e9"  // Abstract
+// ];
+
+// const scrollGallery = document.querySelector(".scroll-gallery");
+// const sections = document.querySelectorAll(".left-content-details");
+// const galleryImages = document.querySelectorAll(".gallery-img img");
+
+// // Loop through each section to handle background color change and image animation
+// sections.forEach((section, index) => {
+//   // Add background color change to the timeline
+//   scrollGalleryTl.to(scrollGallery, {
+//     backgroundColor: colors[index % colors.length], // Cycle through colors
+//     ease: "power2.out",
+//     duration: 0.5,
+//     scrollTrigger: {
+//       trigger: section,
+//       start: "top center", // Start when section top hits viewport center
+//       end: "bottom center", // End when section bottom hits viewport center
+//       scrub: 2 // Smoothly scrub the animation
+//       // markers: true // Uncomment for debugging
+//     }
+//   });
+
+//   // Animate the corresponding image
+//   if (galleryImages[index]) {
+//     const img = galleryImages[index];
+//     const imgHeight = img.getBoundingClientRect().height;
+
+//     scrollGalleryTl.to(img, {
+//       y: -(imgHeight * index), // Move image up based on its index and height
+//       ease: "none",
+//       duration: 1,
+//       scrollTrigger: {
+//         trigger: section,
+//         start: "top center",
+//         end: "bottom center",
+//         scrub: 2 // Smoothly scrub the animation
+//         // markers: true // Uncomment for debugging
+//       }
+//     });
+//   }
+// });
+
     </script>
     </body>
 </html>
