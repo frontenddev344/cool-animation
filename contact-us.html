@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <style>
-.contact-us {
+.contact-us-page {
     padding: 80px 20px;
     height: 100vh;
     background: #e9eae7;
@@ -103,6 +103,8 @@ button.submit-btn {
   mask-position: -9999px -9999px;
   -webkit-mask-position: -9999px -9999px;
   transition: mask-position 0.1s, -webkit-mask-position 0.1s;
+  /* mix-blend-mode:multiply; */
+  z-index: -1;
 }
 </style>
 <body>
@@ -136,11 +138,12 @@ button.submit-btn {
           <!-- site header end -->
     <div id="cursor"></div>
 
-   <section class="contact-us">
+   <section class="contact-us-page">
     <div class="reveal-image"></div>
     <div class="circle-mask"></div>
       
     <div class="contact-us-wrap">
+      <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
                 <div class="conatct-deatils">
@@ -190,6 +193,7 @@ button.submit-btn {
                 </div>
             </div>
         </div>
+      </div>
     </div>
    </section>
  <!-- site-footer start -->
@@ -265,6 +269,7 @@ button.submit-btn {
         let body = document.querySelector("body");
         let circleMask = document.querySelector(".circle-mask")
         const revealImage = document.querySelector('.reveal-image');
+        let contactWrap = document.querySelector(".contact-us-wrap")
 
         body.addEventListener("mousemove", (event) => {
             let cursorHeight = cursor.getBoundingClientRect().height
@@ -279,26 +284,45 @@ button.submit-btn {
                 ease: "back.out"
             });
 
+            let maskOffsetX = revealImage.getBoundingClientRect().width / 2;
+            let maskOffsetY = revealImage.getBoundingClientRect().height / 2;
+
+            let maskX = event.clientX - maskOffsetX;
+            let maskY = event.clientY - maskOffsetY;
+
             gsap.to(revealImage, {
-                maskPosition: `${event.clientX}px ${event.clientY}px`,
-                webkitMaskPosition: `${event.clientX}px ${event.clientY}px`,
-                duration: 0.3,
+                webkitMaskPosition: `${maskX}px ${maskY}px`,
+                maskPosition: `${maskX}px ${maskY}px`,
+                duration: 0.5,
                 ease: "power2.out"
             });
+
            
         });
 
-        container.addEventListener("mouseenter", () => {
-         gsap.to(circleMask,{
-            opacity:1,
+
+
+        
+
+        contactWrap.addEventListener("mouseenter", () => {
+         gsap.to(cursor,{
+            opacity:0,
             duration: 0.5
+         })
+         gsap.to(revealImage,{
+          opacity:1,
+          duration: 0.5
          })
         });
 
-        container.addEventListener("mouseleave", () => {
-            gsap.to(circleMask,{
-            opacity:0,
+        contactWrap.addEventListener("mouseleave", () => {
+            gsap.to(cursor,{
+            opacity:1,
             duration: 0.5
+         })
+         gsap.to(revealImage,{
+          opacity:0,
+          duration: 0.5
          })
         });
     </script>
